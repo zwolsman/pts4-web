@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+ <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><b>C</b>risis <b>I</b>nformatie <b>M</b>anagement <b>S</b>ysteem</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Vliegtuig in de admirant gevlogen</h1>
+        <p class="lead">Rond een uur of 11 zijn er 2 vliegtuigen in gevlogen.</p>
+
+      </div>
+
+      <div class="row marketing">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187810.jpg"/>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              BE-combi op de kop op A4 bij Steenbergen</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">STEENBERGEN – De A4 bij Steenbergen is woensdag tegen de middag richting Bergen op Zoom afgesloten vanwege een ongeval met een vrachtwagentje. Door nog onbekende oorzaak verloor de chauffeur van de BE-combi de macht over het stuur waardoor de combinatie begon te schuiven en uiteindelijk op zijn kop tegen de middengeleider tot stilstand kwam. Hoewel de cabine volledig werd platgedrukt kwam de chauffeur er wonderwel zonder kleerscheuren vanaf. Een bergingsbedrijf zal de combinatie weer terug op zijn wielen zetten en bergen. Hoelang de A4 richting Bergen op Zoom nog afgesloten blijft is niet bekend.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187806.jpeg"/>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              18 paarden gered bij grote brand in stal Diesse</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">DIESSEN - In een paardenstal aan de Waterstraat in Diessen is woensdagmorgen brand uitgebroken. Het vuur ontstond rond 11.30 uur door nog onbekende oorzaak. Achttien paarden die in de stal stonden konden op tijd in veiligheid worden gebracht. De brandweer schaalde op naar code grote brand en zette veel materieel in om die te bestrijden. Overslag naar naastgelegen kon worden voorkomen en ook een dieseltank die langs de brandende stal stond kon worden afgeschermd. Bij de brand kwam veel rook vrij, de brandweer adviseert mensen om uit de rook te blijven. De brandweer verwacht nog enkele uren bezig te zijn met het blussen van de brand.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187802.jpg"/>
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+              Ongeval met auto's en vrachtwagen op A27 bij Oosterhout</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>OOSTERHOUT – Bij een ongeval op de A27 ter hoogte van de oprit Oosterhout-Zuid is woensdagochtend een persoon gewond geraakt. Een andere bestuurder raakte lichtgewond en kon na een kleine behandeling weer verder. Onbekend is of het eerste slachtoffer mee naar het ziekenhuis is. Door nog onbekende oorzaak botsten twee personenwagens tegen elkaar. Naar eigen zeggen kwam dat omdat een vrachtwagen de invoegende auto’s geen ruimte gaf. Een andere vrachtwagen die op de A27 reed kon ternauwernood nog remmen. Door het krachtige remmen schoof zijn lading, een metalen plaat van 17 Ton, naar voren tegen de cabine aan.</p>
+              <p>
+              Het is een wonder dat er niet meer gewonden zijn en dat er relatief maar lichte schade is. Het bergen nam enige tijd in beslag vanwege de vrachtwagen. De andere twee voertuigen moesten door een berger getakeld en afgevoerd worden. Door het ongeval was er tijdelijk maar een rijstrook beschikbaar. De file liep al snel op. Rond 9.00 uur kon de weg weer worden vrijgegeven voor het verkeer.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <footer class="footer">
+        <p style="text-align: center;">Made with <span style="color: red;" class="glyphicon glyphicon-heart" aria-hidden="true"></span> by Alles onder Controle.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+</body>
 </html>
