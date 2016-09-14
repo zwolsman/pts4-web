@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CIMS_BackEnd.iml" filepath="$PROJECT_DIR$/CIMS_BackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pts4-web.iml" filepath="$PROJECT_DIR$/pts4-web.iml" />
     </modules>
   </component>
 </project>

@@ -10,18 +10,8 @@ var users = require('./routes/users');
 
 var app = express();
 
-// database connection
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'lensert.com',
-  user     : 'db',
-  password : 'pts4db',
-  database : 'pts4'
-});
-
-connection.connect();
-
 // view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
