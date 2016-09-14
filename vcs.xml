@@ -6,7 +6,16 @@
           <option name="url" value="http://github.com" />
           <option name="userName" value="GoosvandenBekerom" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/zwolsman/pts4-web.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/zwolsman/pts4-web" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="C:\Users\GoosLaptop\IdeaProjects" />
   </component>
 </application>
