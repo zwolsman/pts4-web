@@ -33,7 +33,6 @@ for(var i = 1; i < users.length; i+=2) {
        console.log('executed querry');
     });
 }
-console.log(users);
 
 function hash(input) {
     var md5 = require('md5');
