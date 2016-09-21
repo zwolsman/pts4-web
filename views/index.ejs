@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title><%= title %></title>
+  <title>Crisis management systeem - <%= title %></title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,50 +42,28 @@
   </div>
 
   <div class="row marketing">
-    <div class="panel-group" id="accordion">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187810.jpg"/>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-              BE-combi op de kop op A4 bij Steenbergen</a>
-          </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="panel-body" style="padding: 0;">
-            <img src="http://maps.googleapis.com/maps/api/staticmap?autoscale=false&size=700x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7CSteenbergen" style="width: 100%;"/>
-            <p style="margin: 15px;">STEENBERGEN – De A4 bij Steenbergen is woensdag tegen de middag richting Bergen op Zoom afgesloten vanwege een ongeval met een vrachtwagentje. Door nog onbekende oorzaak verloor de chauffeur van de BE-combi de macht over het stuur waardoor de combinatie begon te schuiven en uiteindelijk op zijn kop tegen de middengeleider tot stilstand kwam. Hoewel de cabine volledig werd platgedrukt kwam de chauffeur er wonderwel zonder kleerscheuren vanaf. Een bergingsbedrijf zal de combinatie weer terug op zijn wielen zetten en bergen. Hoelang de A4 richting Bergen op Zoom nog afgesloten blijft is niet bekend.</p></div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187806.jpeg"/>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-              18 paarden gered bij grote brand in stal Diesse</a>
-          </h4>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-          <div class="panel-body">DIESSEN - In een paardenstal aan de Waterstraat in Diessen is woensdagmorgen brand uitgebroken. Het vuur ontstond rond 11.30 uur door nog onbekende oorzaak. Achttien paarden die in de stal stonden konden op tijd in veiligheid worden gebracht. De brandweer schaalde op naar code grote brand en zette veel materieel in om die te bestrijden. Overslag naar naastgelegen kon worden voorkomen en ook een dieseltank die langs de brandende stal stond kon worden afgeschermd. Bij de brand kwam veel rook vrij, de brandweer adviseert mensen om uit de rook te blijven. De brandweer verwacht nog enkele uren bezig te zijn met het blussen van de brand.</div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <img src="http://www.112brabant.nl/data/news/94/thumbnails/187802.jpg"/>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-              Ongeval met auto's en vrachtwagen op A27 bij Oosterhout</a>
-          </h4>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>OOSTERHOUT – Bij een ongeval op de A27 ter hoogte van de oprit Oosterhout-Zuid is woensdagochtend een persoon gewond geraakt. Een andere bestuurder raakte lichtgewond en kon na een kleine behandeling weer verder. Onbekend is of het eerste slachtoffer mee naar het ziekenhuis is. Door nog onbekende oorzaak botsten twee personenwagens tegen elkaar. Naar eigen zeggen kwam dat omdat een vrachtwagen de invoegende auto’s geen ruimte gaf. Een andere vrachtwagen die op de A27 reed kon ternauwernood nog remmen. Door het krachtige remmen schoof zijn lading, een metalen plaat van 17 Ton, naar voren tegen de cabine aan.</p>
-            <p>
-              Het is een wonder dat er niet meer gewonden zijn en dat er relatief maar lichte schade is. Het bergen nam enige tijd in beslag vanwege de vrachtwagen. De andere twee voertuigen moesten door een berger getakeld en afgevoerd worden. Door het ongeval was er tijdelijk maar een rijstrook beschikbaar. De file liep al snel op. Rond 9.00 uur kon de weg weer worden vrijgegeven voor het verkeer.</p>
-          </div>
 
+
+    <div class="panel-group" id="accordion">
+
+      <!-- een post -->
+      <% for(var i=0; i< posts.length; i++) {%>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <img src="<%= posts[i].img %>"/>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>">
+              <%= posts[i].header %></a>
+          </h4>
+        </div>
+        <div id="collapse<%= i %>" class="panel-collapse collapse">
+          <div class="panel-body" style="padding: 0;">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?autoscale=false&size=700x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= posts[i].loc %>" style="width: 100%;"/>
+            <p style="margin: 15px;"><%= posts[i].loc.toUpperCase() %> – <%= posts[i].desc %></p></div>
         </div>
       </div>
+      <% } %>
+      <!-- einde van post -->
     </div>
   </div>
 
