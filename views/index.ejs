@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Crisis management systeem - <%= title %></title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">About</a></li>
+        <li role="presentation"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <h3 class="text-muted"><b>C</b>risis <b>I</b>nformatie <b>M</b>anagement <b>S</b>ysteem</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h1>Vliegtuig in de admirant gevlogen</h1>
+    <p class="lead">Rond een uur of 11 zijn er 2 vliegtuigen in gevlogen.</p>
+
+  </div>
+
+  <div class="row marketing">
+
+
+    <div class="panel-group" id="accordion">
+
+      <!-- een post -->
+      <% for(var i=0; i< posts.length; i++) {%>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <img src="<%= posts[i].img %>"/>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>">
+              <%= posts[i].header %></a>
+          </h4>
+        </div>
+        <div id="collapse<%= i %>" class="panel-collapse collapse">
+          <div class="panel-body" style="padding: 0;">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?autoscale=false&size=700x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= posts[i].loc %>" style="width: 100%;"/>
+            <p style="margin: 15px;"><%= posts[i].loc.toUpperCase() %> – <%= posts[i].desc %></p></div>
+        </div>
+      </div>
+      <% } %>
+      <!-- einde van post -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p style="text-align: center;">Met  <span style="color: red;" class="glyphicon glyphicon-heart" aria-hidden="true"></span> gemaakt door <i>Alles onder Controle</i>.</p>
+  </footer>
+
+</div> <!-- /container -->
+
+
+
+</body>
 </html>
