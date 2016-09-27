@@ -15,16 +15,6 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-var getLocation = function(searchQuery) {
-    geocoder.geocode('De Admirant, Eindhoven')
-        .then(function(res) {
-            console.log(res);
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-}
-
 function initMap() {
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
@@ -33,10 +23,18 @@ function initMap() {
     });
 };
 
-
-
 /* GET Form page. */
 router.get('/', function(req, res, next) {
+
+    var getLocation = function(searchQuery) {
+        geocoder.geocode(searchQuery)
+            .then(function(resp) {
+                return JSON.stringify(resp.latitude + ', ' + resp.longitude);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    }
 
     function requestMap(){
         var maps_api = {
@@ -50,7 +48,7 @@ router.get('/', function(req, res, next) {
         });
     };
 
-    res.render('form', { title: 'Meld een crisis'/*, requestMap: requestMap()*/});
+    res.render('form', { title: 'Meld een crisis', getLocation: getLocation('De Admirant, Eindhoven')});
 });
 
 module.exports = router;
