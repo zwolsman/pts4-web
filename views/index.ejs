@@ -51,15 +51,15 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <img src="<%= posts[i].img %>"/>
+            <img src="<%= posts[i].thumbnail %>"/>
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>">
-              <%= posts[i].header %></a>
+              <%= posts[i].title %></a>
           </h4>
         </div>
         <div id="collapse<%= i %>" class="panel-collapse collapse">
           <div class="panel-body" style="padding: 0;">
             <img src="http://maps.googleapis.com/maps/api/staticmap?autoscale=false&size=700x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= posts[i].loc %>" style="width: 100%;"/>
-            <p style="margin: 15px;"><%= posts[i].loc.toUpperCase() %> – <%= posts[i].desc %></p></div>
+            <p style="margin: 15px;"><%= posts[i].description %></p></div>
         </div>
       </div>
       <% } %>
