@@ -22,6 +22,10 @@
           <option name="url" value="https://github.com/zwolsman/pts4-web-v3.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/zwolsman/pts4-web-new.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\GoosLaptop\IdeaProjects" />
